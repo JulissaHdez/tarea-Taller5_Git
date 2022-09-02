@@ -47,8 +47,13 @@ app.get('/work', function(request, response) {
     response.render("list", { listTitle: title, listOfItems: workItems });
 });
 
-app.get("/about", function(req, res) {
-    res.render('about');
+app.get("/about/:carnet", function(request, res) {
+    data={
+        carnet: request.params.carnet,
+        nombre:'Damaris Julissa',
+        apellidos:'Hernandez Guardado'
+    }
+    res.render('about',data);
 });
 
 
